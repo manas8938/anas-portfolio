@@ -3,11 +3,19 @@ import React, { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const projects = [
-   {
+  {
+    title: "Kim Long Restaurants",
+    description: "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations. Deployed on Netlify with continuous integration.",
+    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Netlify", "Responsive Design", "React Router", "Lucide Icons"],
+    github: "https://github.com/manas8938/kim-long-restaurants",
+    live: "https://kimlongrestaurants.netlify.app/",
+    image: "/assets/kimlong.png", // Update this path to your project screenshot
+  },
+  {
     title: "Multi-Tenant SaaS Backend",
     description: "Developed an enterprise-grade multi-tenant backend using Next.js, PostgreSQL, Prisma, and NextAuth.js, Docker. Implemented tenant-based data isolation, RBAC (Owner/Admin/Member), JWT authentication, secure REST APIs, and subscription/plan management. Integrated background workers with Redis + BullMQ for audit logging, email notifications, and subscription checks.",
-    tags: ["Next.js", "TypeScript","Docker","Swagger", "PostgreSQL", "Prisma", "NextAuth.js", "JWT", "Redis", "BullMQ", "Docker", "REST API", "Multi-Tenancy", "RBAC"],
-    github: "", // No GitHub link yet
+    tags: ["Next.js", "TypeScript", "Docker", "Swagger", "PostgreSQL", "Prisma", "NextAuth.js", "JWT", "Redis", "BullMQ", "REST API", "Multi-Tenancy", "RBAC"],
+    github: "",
     image: "/assets/backend.png",
   },
   {
@@ -134,14 +142,28 @@ const Projects = () => {
                       Currently Working
                     </button>
                   ) : (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-purple-600/20 to-purple-600/20 hover:from-purple-600 hover:to-purple-500 border border-purple-500/30 hover:border-purple-400 transition-all duration-300 hover:scale-105"
-                    >
-                      GitHub
-                    </a>
+                    <div className="flex gap-2 w-full">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-purple-600/20 to-purple-600/20 hover:from-purple-600 hover:to-purple-500 border border-purple-500/30 hover:border-purple-400 transition-all duration-300 hover:scale-105"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 hover:from-cyan-600 hover:to-cyan-500 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                        >
+                          Live
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
