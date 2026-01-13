@@ -1,28 +1,28 @@
-// src/components/Projects.jsx
 import React, { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "Kim Long Restaurants",
-    description: "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations. Deployed on Netlify with continuous integration.",
-    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Netlify", "Responsive Design", "React Router", "Lucide Icons"],
-    github: "https://github.com/manas8938/kim-long-restaurants",
-    live: "https://kimlongrestaurants.netlify.app/",
-    image: "/assets/kimlong.png", // Update this path to your project screenshot
-  },
-  {
     title: "Multi-Tenant SaaS Backend",
     description: "Developed an enterprise-grade multi-tenant backend using Next.js, PostgreSQL, Prisma, and NextAuth.js, Docker. Implemented tenant-based data isolation, RBAC (Owner/Admin/Member), JWT authentication, secure REST APIs, and subscription/plan management. Integrated background workers with Redis + BullMQ for audit logging, email notifications, and subscription checks.",
-    tags: ["Next.js", "TypeScript", "Docker", "Swagger", "PostgreSQL", "Prisma", "NextAuth.js", "JWT", "Redis", "BullMQ", "REST API", "Multi-Tenancy", "RBAC"],
-    github: "",
+    tags: ["Nest.js", "Prisma", "PostgreSQL","Redis", "BullMQ", "JWT", "OAuth2", "RBAC" ,"REST API","Docker","Docker Compose","CI/CD"],
+    github: "", 
     image: "/assets/backend.png",
+  },
+  {
+    title: "Kim Long Restaurants",
+    description: "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations. Deployed on Netlify with continuous integration.",
+    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS","Docker","NestJS","Swagger","PostreSQL","REST API"],
+    github: "", 
+    live: "https://kimlongrestaurants.netlify.app/",
+    image: "/assets/kimlong.png",
   },
   {
     title: "Calvio Mart Website",
     description: "A full-stack E-commerce Website built using React.js for the frontend and NestJS, PostgreSQL, Swagger, Docker for the backend. Features include Auth, User, Admin, Order, and Product management.",
     tags: ["React.js", "Tailwind CSS", "CSS", "Figma", "Docker", "NestJS", "PostgreSQL", "Swagger", "REST API"],
-    github: "https://github.com/manas8938/calvio-mart",
+    github: "",
+    live: "https://calviomart.netlify.app/",
     image: "/assets/calvio.png",
   },
   {
@@ -40,8 +40,8 @@ const projects = [
     image: "/assets/fitness.jpg",
   },
   {
-    title: "Random Qoute Generator App",
-    description: "Random app built using Flutter. It Generate Random Qoutes.",
+    title: "Random Quote Generator App",
+    description: "Random app built using Flutter. It generates random quotes.",
     tags: ["Flutter", "Dart"],
     github: "https://github.com/manas8938/CodeAlpha_RandomQuoteGenerator",
     image: "/assets/qoute.png",
@@ -133,7 +133,7 @@ const Projects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3 mt-auto">
+                <div className="flex gap-2 mt-auto w-full">
                   {project.title === "Multi-Tenant SaaS Backend" ? (
                     <button
                       className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 border border-cyan-500/30 cursor-not-allowed"
@@ -142,7 +142,7 @@ const Projects = () => {
                       Currently Working
                     </button>
                   ) : (
-                    <div className="flex gap-2 w-full">
+                    <>
                       {project.github && (
                         <a
                           href={project.github}
@@ -158,12 +158,12 @@ const Projects = () => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 hover:from-cyan-600 hover:to-cyan-500 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105"
+                          className={`flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 hover:from-cyan-600 hover:to-cyan-500 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105`}
                         >
                           Live
                         </a>
                       )}
-                    </div>
+                    </>
                   )}
                 </div>
               </div>
