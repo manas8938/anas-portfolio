@@ -11,14 +11,6 @@ const projects = [
     image: "/assets/backend.png",
   },
   {
-    title: "Kim Long Restaurants",
-    description:
-      "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations.",
-    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS",],
-    github: "https://github.com/manas8938/kim-long-restaurants",
-    image: "/assets/kimlong.png",
-  },
-  {
     title: "Calvio Mart Website",
     description:
       "A full-stack E-commerce Website built using React.js for the frontend and NestJS, PostgreSQL, Swagger, Docker for the backend. Features include Auth, User, Admin, Order, and Product management.",
@@ -33,6 +25,14 @@ const projects = [
     tags: ["Flutter", "Figma", "Docker", "NestJS", "MySQL", "Swagger", "REST API"],
     github: "https://github.com/manas8938/movrapp",
     image: "/assets/SmartDeliverySystem.jpeg",
+  },
+  {
+    title: "Kim Long Restaurants",
+    description:
+      "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations.",
+    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS",],
+    github: "https://github.com/manas8938/kim-long-restaurants",
+    image: "/assets/kimlong.png",
   },
   {
     title: "Fitness Tracker App",
