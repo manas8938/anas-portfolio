@@ -4,37 +4,40 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const projects = [
   {
     title: "Multi-Tenant SaaS Backend",
-    description: "Developed an enterprise-grade multi-tenant backend using Next.js, PostgreSQL, Prisma, and NextAuth.js, Docker. Implemented tenant-based data isolation, RBAC (Owner/Admin/Member), JWT authentication, secure REST APIs, and subscription/plan management. Integrated background workers with Redis + BullMQ for audit logging, email notifications, and subscription checks.",
-    tags: ["Nest.js", "Prisma", "PostgreSQL","Redis", "BullMQ", "JWT", "OAuth2", "RBAC" ,"REST API","Docker","Docker Compose","CI/CD"],
-    github: "", 
+    description:
+      "Developed an enterprise-grade multi-tenant backend using Next.js, PostgreSQL, Prisma, and NextAuth.js, Docker. Implemented tenant-based data isolation, RBAC (Owner/Admin/Member), JWT authentication, secure REST APIs, and subscription/plan management. Integrated background workers with Redis + BullMQ for audit logging, email notifications, and subscription checks.",
+    tags: ["Nest.js", "Prisma", "PostgreSQL", "Redis", "BullMQ", "JWT", "OAuth2", "RBAC", "REST API", "Docker", "Docker Compose", "CI/CD"],
+    github: "",
     image: "/assets/backend.png",
   },
   {
     title: "Kim Long Restaurants",
-    description: "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations. Deployed on Netlify with continuous integration.",
-    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS","Docker","NestJS","Swagger","PostreSQL","REST API"],
-    github: "", 
-    live: "https://kimlongrestaurants.netlify.app/",
+    description:
+      "Modern restaurant website built with React 19, Vite, TypeScript, and Tailwind CSS. Features a responsive design, interactive menu with categories, customer reviews section, contact form with validation, and smooth animations.",
+    tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS",],
+    github: "https://github.com/manas8938/kim-long-restaurants",
     image: "/assets/kimlong.png",
   },
   {
     title: "Calvio Mart Website",
-    description: "A full-stack E-commerce Website built using React.js for the frontend and NestJS, PostgreSQL, Swagger, Docker for the backend. Features include Auth, User, Admin, Order, and Product management.",
+    description:
+      "A full-stack E-commerce Website built using React.js for the frontend and NestJS, PostgreSQL, Swagger, Docker for the backend. Features include Auth, User, Admin, Order, and Product management.",
     tags: ["React.js", "Tailwind CSS", "CSS", "Figma", "Docker", "NestJS", "PostgreSQL", "Swagger", "REST API"],
-    github: "",
-    live: "https://calviomart.netlify.app/",
+    github: "https://github.com/manas8938/calvio-mart",
     image: "/assets/calvio.png",
   },
   {
     title: "Movr App",
-    description: "A full-stack parcel delivery system built using Flutter for the frontend and NestJS with MySQL for the backend. Features include parcel tracking, real-time updates, and delivery management.",
+    description:
+      "A full-stack parcel delivery system built using Flutter for the frontend and NestJS with MySQL for the backend. Features include parcel tracking, real-time updates, and delivery management.",
     tags: ["Flutter", "Figma", "Docker", "NestJS", "MySQL", "Swagger", "REST API"],
     github: "https://github.com/manas8938/movrapp",
     image: "/assets/SmartDeliverySystem.jpeg",
   },
   {
     title: "Fitness Tracker App",
-    description: "Fitness Tracker app built using Flutter and Firebase. Tracks workouts, steps, calories, and sleep; includes workout plans, progress charts, local storage, user authentication, and exportable reports.",
+    description:
+      "Fitness Tracker app built using Flutter and Firebase. Tracks workouts, steps, calories, and sleep; includes workout plans, progress charts, local storage, user authentication, and exportable reports.",
     tags: ["Flutter", "Dart", "Firebase", "Figma"],
     github: "https://github.com/manas8938/CodeAlpha_FitnessTracker",
     image: "/assets/fitness.jpg",
@@ -52,14 +55,13 @@ const Projects = () => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const scrollAmount = container.clientWidth * 0.8;
-      container.scrollTo({
-        left: direction === 'left' ? container.scrollLeft - scrollAmount : container.scrollLeft + scrollAmount,
-        behavior: 'smooth',
-      });
-    }
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollAmount = container.clientWidth * 0.8;
+    container.scrollTo({
+      left: direction === "left" ? container.scrollLeft - scrollAmount : container.scrollLeft + scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -73,7 +75,7 @@ const Projects = () => {
 
         {/* Scroll Buttons */}
         <button
-          onClick={() => scroll('left')}
+          onClick={() => scroll("left")}
           className="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-10 p-3 md:p-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/50 hover:scale-110"
           aria-label="Scroll left"
         >
@@ -81,7 +83,7 @@ const Projects = () => {
         </button>
 
         <button
-          onClick={() => scroll('right')}
+          onClick={() => scroll("right")}
           className="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-10 p-3 md:p-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-cyan-500/50 hover:scale-110"
           aria-label="Scroll right"
         >
@@ -94,8 +96,8 @@ const Projects = () => {
           role="list"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === 'ArrowLeft') scroll('left');
-            if (e.key === 'ArrowRight') scroll('right');
+            if (e.key === "ArrowLeft") scroll("left");
+            if (e.key === "ArrowRight") scroll("right");
           }}
           className="flex gap-8 overflow-x-auto scroll-smooth pb-6 pl-2 pr-2 md:pl-0 md:pr-0"
         >
@@ -105,7 +107,7 @@ const Projects = () => {
               className="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33%-1.5rem)] group relative bg-gradient-to-br from-purple-900/30 to-cyan-900/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-purple-500/20 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan-500/30"
             >
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-cyan-600/0 group-hover:from-purple-600/20 group-hover:to-cyan-600/20 transition-all duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-cyan-600/0 group-hover:from-purple-600/20 group-hover:to-cyan-600/20 transition-all duration-500 z-10" />
 
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -139,31 +141,25 @@ const Projects = () => {
                       className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 border border-cyan-500/30 cursor-not-allowed"
                       disabled
                     >
-                      Currently Working
+                      In Progress
                     </button>
                   ) : (
-                    <>
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-purple-600/20 to-purple-600/20 hover:from-purple-600 hover:to-purple-500 border border-purple-500/30 hover:border-purple-400 transition-all duration-300 hover:scale-105"
-                        >
-                          GitHub
-                        </a>
-                      )}
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`flex-1 text-center py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-600/20 to-cyan-600/20 hover:from-cyan-600 hover:to-cyan-500 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105`}
-                        >
-                          Live
-                        </a>
-                      )}
-                    </>
+                    <a
+                      href={project.github || "#"}
+                      onClick={(e) => {
+                        if (!project.github) e.preventDefault();
+                      }}
+                      target={project.github ? "_blank" : undefined}
+                      rel={project.github ? "noopener noreferrer" : undefined}
+                      aria-disabled={!project.github}
+                      className={`flex-1 text-center py-3 rounded-full font-semibold transition border ${
+                        project.github
+                          ? "bg-gradient-to-r from-purple-600/20 to-purple-600/20 hover:from-purple-600 hover:to-purple-500 border-purple-500/30 hover:border-purple-400 hover:scale-105"
+                          : "bg-gray-700/20 border-gray-700/30 pointer-events-none opacity-60"
+                      }`}
+                    >
+                      GitHub
+                    </a>
                   )}
                 </div>
               </div>
