@@ -17,7 +17,7 @@ const SocialLinks = ({ size = "text-2xl", gap = "space-x-4" }) => {
     },
     { 
       icon: FaInstagram, 
-      url: "https://instagram.com/_ana7x_/", 
+      url: "https://www.instagram.com/_anakx_/", 
       color: "hover:text-pink-500",
       label: "Instagram"
     },
