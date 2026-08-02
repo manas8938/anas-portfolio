@@ -20,14 +20,6 @@ const Contact = () => {
       hoverBorder: "hover:border-purple-500/50"
     },
     { 
-      icon: FaInstagram, 
-      label: "Instagram", 
-      url: "https://instagram.com/_ana7x_/", 
-      color: "text-pink-500", 
-      hoverBg: "hover:bg-pink-500/20",
-      hoverBorder: "hover:border-pink-500/50"
-    },
-    { 
       icon: FaLinkedin, 
       label: "LinkedIn", 
       url: "https://www.linkedin.com/in/muhammad-anas-nawaz-9730a8287", 

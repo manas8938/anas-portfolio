@@ -16,12 +16,6 @@ const SocialLinks = ({ size = "text-2xl", gap = "space-x-4" }) => {
       label: "GitHub"
     },
     { 
-      icon: FaInstagram, 
-      url: "https://www.instagram.com/_anakx_/", 
-      color: "hover:text-pink-500",
-      label: "Instagram"
-    },
-    { 
       icon: FaLinkedin, 
       url: "https://www.linkedin.com/in/muhammad-anas-nawaz-9730a8287", 
       color: "hover:text-cyan-400",
