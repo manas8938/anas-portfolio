@@ -1,0 +1,17 @@
+export const skills = [
+  { name: "Flutter", level: 95 },
+  { name: "Dart", level: 90 },
+  { name: "React.js", level: 90 },
+  { name: "JavaScript", level: 85 },
+  { name: "TypeScript", level: 85 },
+  { name: "NestJS", level: 85 },
+  { name: "Node.js", level: 80 },
+  { name: "PostgreSQL", level: 85 },
+  { name: "MySQL", level: 85 },
+  { name: "Docker", level: 80 },
+  { name: "Firebase", level: 85 },
+  { name: "Tailwind CSS", level: 90 },
+  { name: "Figma", level: 90 },
+  { name: "Swagger", level: 80 },
+  { name: "JWT Authentication", level: 80 },
+];
