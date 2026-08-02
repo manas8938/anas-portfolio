@@ -54,7 +54,7 @@ const Contact = () => {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative w-40 bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 ${item.hoverBorder} ${item.hoverBg} transition-all duration-500 hover:scale-110 hover:shadow-2xl`}
+                    className={`group relative bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20 ${item.hoverBorder} ${item.hoverBg} transition-all duration-500 hover:scale-110 hover:shadow-2xl`}
                   >
                     <div className={`mb-3 ${item.color} transform group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500`}>
                       <Icon className="text-5xl mx-auto" />
