@@ -31,7 +31,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-cyan-950/20 to-black">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-2xl mx-auto px-6">
         <div className="relative bg-gradient-to-br from-purple-900/30 to-cyan-900/30 backdrop-blur-xl rounded-3xl p-12 border border-purple-500/30 shadow-2xl shadow-purple-500/20">
           {/* Decorative gradient orbs */}
           <div className="absolute top-0 left-0 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl"></div>
@@ -45,7 +45,7 @@ const Contact = () => {
               Ready to collaborate? Reach out through your preferred platform!
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {socials.map((item, index) => {
                 const Icon = item.icon;
                 return (
