@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const socials = [
@@ -45,7 +45,7 @@ const Contact = () => {
               Ready to collaborate? Reach out through your preferred platform!
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {socials.map((item, index) => {
                 const Icon = item.icon;
                 return (
