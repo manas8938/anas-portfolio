@@ -42,16 +42,33 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-6 py-4 border-y border-white/10 my-2">
               {[
-                { number: "100+", label: "APIs Built" },
-                { number: "p95 < 266ms", label: "API Latency" },
+                { number: "3+ Years", label: "Experience" },
+                { number: "152ms p95", label: "API Latency" },
                 { number: "200+", label: "Tests Written" },
-                { number: "🇸🇦 Live", label: "Production KSA" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex flex-col">
-                  <span className="text-lg font-bold text-cyan-400">{stat.number}</span>
-                  <span className="text-xs text-gray-400">{stat.label}</span>
-                </div>
-              ))}
+                { number: "🇸🇦 Live", label: "Production KSA", href: "https://www.miknaz.com" },
+              ].map((stat) => {
+                const content = (
+                  <>
+                    <span className="text-lg font-bold text-cyan-400">{stat.number}</span>
+                    <span className="text-xs text-gray-400">{stat.label}</span>
+                  </>
+                );
+                return stat.href ? (
+                  <a
+                    key={stat.label}
+                    href={stat.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={stat.label} className="flex flex-col">
+                    {content}
+                  </div>
+                );
+              })}
             </div>
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 pt-4">
               <a

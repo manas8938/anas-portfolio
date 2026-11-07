@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const projects = [
   {
     title: "MIKNAZ — Saudi Fintech Voucher Race Platform",
-    description: "Production-live geofenced voucher platform for the Saudi Arabian market — built solo end-to-end across 5 milestones. Users race to claim vouchers within GPS radius (first click wins) with Redis atomic locking via Lua scripts + PostgreSQL SELECT FOR UPDATE for zero double-claims. Flutter mobile app (iOS/Android) with Firebase OTP, full RTL Arabic/English support, and 27 error states. Vendor & Admin React dashboards, ZATCA Phase 1 e-invoicing, Moyasar/Tap payment scaffold, OCI Jeddah (E5.Flex, PM2 cluster, Nginx SSL, Cloudflare CDN). Load tested: p95 = 266ms at 200 concurrent users, 51 req/s, zero crashes. Full 4,911-line OpenAPI spec + handover runbook.",
+    description: "Production-live geofenced voucher platform for the Saudi Arabian market — built solo end-to-end across 5 milestones. Users race to claim vouchers within GPS radius (first click wins) with Redis atomic locking via Lua scripts + PostgreSQL SELECT FOR UPDATE for zero double-claims. Flutter mobile app (iOS/Android) with Firebase OTP, full RTL Arabic/English support, and 27 error states. Vendor & Admin React dashboards, ZATCA Phase 1 e-invoicing, strategy-pattern payment layer (card, Apple Pay, STC Pay) across Moyasar and Tap with HMAC webhook verification, OCI Jeddah (E5.Flex, PM2 cluster, Nginx SSL, Cloudflare CDN). Load tested: p95 = 152ms at 200 concurrent users, 52.1 req/s, zero crashes. Full 4,911-line OpenAPI spec + handover runbook.",
     tags: ["Flutter", "NestJS", "PostgreSQL", "PostGIS", "Redis", "React", "TypeScript", "Oracle Cloud (OCI)", "Cloudflare", "Firebase", "ZATCA", "Resend", "Cloudinary", "Docker", "JWT", "RBAC", "k6", "Moyasar", "Tap Payments"],
     github: null,
     live: "https://www.miknaz.com/",
@@ -19,6 +19,14 @@ const projects = [
     image: "/assets/bm.png",
   },
   {
+    title: "HS Beauty — E-Commerce Platform",
+    description:
+      "Full-stack e-commerce platform for a cosmetics brand in Pakistan. Monorepo with separate React storefront and admin apps on a shared NestJS + PostgreSQL (Supabase) backend with Prisma. Passwordless email OTP and Google OAuth for customers, with a separate role-gated password login for admins. Order processing with separate fulfillment and payment status axes, server-side price and stock validation, stock reservation with automatic restock on cancellation, and admin confirm/decline flows with Resend emails. Cut product image payload by 92.6%, consolidated Prisma reads from up to 6 queries into a single SQL JOIN, added 5 indexes, and fixed an N+1 query. Hardened for launch with tiered rate limiting, Helmet security headers, magic-byte upload validation, refresh-token rotation, and an append-only admin audit log.",
+    tags: ["React", "NestJS", "PostgreSQL", "Prisma", "Supabase", "Cloudinary", "Resend", "Docker", "Tailwind CSS", "Google OAuth", "Helmet", "Rate Limiting"],
+    github: null,
+    image: "/assets/hs-beauty.jpg",
+  },
+  {
     title: "Multi-Tenant SaaS Backend",
     description:
       "Developed an enterprise-grade multi-tenant backend using NestJS, PostgreSQL, Prisma, and Docker. Implemented tenant-based data isolation, RBAC (Owner/Admin/Member), JWT authentication, secure REST APIs, and subscription/plan management. Integrated background workers with Redis + BullMQ for audit logging, email notifications, and subscription checks.",
@@ -29,16 +37,16 @@ const projects = [
   {
     title: "Calvio Mart Website",
     description:
-      "A full-stack E-commerce Website built using React.js for the frontend and NestJS, PostgreSQL, Swagger, Docker for the backend. Features include Auth, User, Admin, Order, and Product management.",
-    tags: ["React.js", "Tailwind CSS", "CSS", "Figma", "Docker", "NestJS", "PostgreSQL", "Swagger", "REST API"],
+      "Full e-commerce platform built for a direct client with React, NestJS, PostgreSQL, and Docker, exposing 50+ documented REST endpoints covering core commerce workflows. Includes an RBAC-protected admin panel with authentication, user, order, and product management, plus payment gateway integration.",
+    tags: ["React.js", "Tailwind CSS", "CSS", "Figma", "Docker", "NestJS", "PostgreSQL", "Swagger", "REST API", "RBAC", "JWT"],
     github: "https://github.com/manas8938/calvio-mart",
     image: "/assets/calvio.png",
   },
   {
     title: "Movr App",
     description:
-      "A full-stack parcel delivery system built using Flutter for the frontend and NestJS with MySQL for the backend. Features include parcel tracking, real-time updates, and delivery management.",
-    tags: ["Flutter", "Figma", "Docker", "NestJS", "MySQL", "Swagger", "REST API"],
+      "Final Year Project, solo-developed for an external client. Cross-platform Flutter parcel delivery app (Provider, clean architecture) with a NestJS + MySQL + TypeORM backend, JWT-secured REST APIs, real-time parcel tracking, and delivery management.",
+    tags: ["Flutter", "Figma", "Docker", "NestJS", "MySQL", "Swagger", "REST API", "TypeORM", "JWT", "Provider"],
     github: "https://github.com/manas8938/movrapp",
     image: "/assets/SmartDeliverySystem.jpeg",
   },
@@ -58,13 +66,6 @@ const projects = [
     tags: ["Flutter", "Dart", "Firebase", "Figma"],
     github: "https://github.com/manas8938/CodeAlpha_FitnessTracker",
     image: "/assets/fitness.jpg",
-  },
-  {
-    title: "Random Quote Generator App",
-    description: "Random app built using Flutter. It generates random quotes.",
-    tags: ["Flutter", "Dart"],
-    github: "https://github.com/manas8938/CodeAlpha_RandomQuoteGenerator",
-    image: "/assets/qoute.png",
   },
 ];
 
@@ -152,14 +153,14 @@ const Projects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className='flex gap-2 mt-auto w-full'>
+                {(project.live || project.github) && <div className='flex gap-2 mt-auto w-full'>
                   {project.live && (
                     <a href={project.live} target='_blank' rel='noopener noreferrer' className='flex-1 text-center py-3 rounded-full font-semibold transition border bg-gradient-to-r from-cyan-600/20 hover:from-cyan-600 hover:to-cyan-500 border-cyan-500/30 hover:border-cyan-400 hover:scale-105'>Live Site</a>
                   )}
                   {project.github && (
                     <a href={project.github} target='_blank' rel='noopener noreferrer' className='flex-1 text-center py-3 rounded-full font-semibold transition border bg-gradient-to-r from-purple-600/20 hover:from-purple-600 hover:to-purple-500 border-purple-500/30 hover:border-purple-400 hover:scale-105'>GitHub</a>
                   )}
-                </div>
+                </div>}
               </div>
             </article>
           ))}

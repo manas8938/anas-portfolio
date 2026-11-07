@@ -2,54 +2,76 @@ import React from 'react';
 
 const timeline = [
   {
-    title: "Full-Stack Developer (Freelance, Solo Contract)",
-    subtitle: "Upwork, Saudi Arabia Market",
+    title: "Full-Stack Developer (Freelance Contract)",
+    subtitle: "Upwork, Saudi Arabia Client · Remote",
     location: "",
     period: "Feb 2026 – Present",
     bullets: [
-      "Architecture: Architected and built MIKNAZ solo across 5 milestones: a Flutter mobile app, NestJS backend, two React dashboards, ZATCA-compliant e-invoicing, Moyasar/Tap payments, and Arabic/English RTL localization.",
-      "Concurrency Engine: Designed a zero-double-claim voucher engine using Redis atomic locking and PostgreSQL transactions, eliminating duplicate redemptions under concurrent load across four user roles.",
-      "Security: Hardened MIKNAZ against CSRF, IDOR, and brute-force attacks with JWT blacklisting, timing-safe comparisons, idempotency keys, and AES-256 encryption, on top of Firebase OTP auth and GPS anti-spoofing.",
-      "Performance (verified): Built a 200+ automated test suite and independently load-tested the platform at 200 concurrent users: 152ms p95 response time, 52.1 req/s, zero crashes or database errors.",
-      "Cloud & Reliability: Deployed and operate the stack on OCI (Jeddah) with PM2 clustering, Nginx/SSL, and Cloudflare CDN, plus Sentry monitoring, daily backups, and 5-minute uptime checks.",
-      "Client Trust & Retention: Led client communication throughout delivery; the engagement converted from a fixed-scope contract into an ongoing retainer, with Phase 2 now in planning.",
-      "Documentation: Authored a 4,911-line OpenAPI spec and handover runbook, enabling long-term maintainability independent of the original builder.",
-      "Design Collaboration: Worked with the UI/UX designer to review Figma prototypes, provide implementation feedback, and refine user flows before development.",
+      <>
+        Architected and built{' '}
+        <a
+          href="https://www.miknaz.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan-400 hover:underline"
+        >
+          MIKNAZ
+        </a>{' '}
+        end to end across five milestones: a Flutter mobile app, NestJS backend, two React dashboards, ZATCA-compliant e-invoicing, dual payment gateways, and Arabic/English RTL support.
+      </>,
+      "Engineered a zero-double-claim voucher system using Redis Lua atomic locks and PostgreSQL row locking, keeping claim processing transaction-safe under concurrent requests.",
+      "Designed a strategy-pattern payment layer for card, Apple Pay, and STC Pay across two gateways, with HMAC webhook verification and idempotent payment-status handling.",
+      "Hardened the platform against IDOR, CSRF, and brute-force attacks with JWT blacklisting, per-identity rate limits, CSPRNG OTPs, AES-256-GCM encryption, and GPS anti-spoofing; closed a Cloudflare origin-bypass gap.",
+      "Built 200+ automated tests and load-tested at 200 concurrent users: 152 ms p95 response time, 52.1 req/s, zero errors. Audited all four codebases before launch and fixed payment and notification gaps.",
+      "Deployed and operate production on Oracle Cloud (Jeddah) with PM2, Nginx/SSL, Cloudflare CDN, and Sentry; wrote a 4,911-line OpenAPI spec and handover runbook.",
     ],
-    tags: ["Flutter", "NestJS", "React", "PostgreSQL", "PostGIS", "Redis", "TypeScript", "OCI", "Cloudflare", "Firebase", "ZATCA", "Resend", "Cloudinary", "Docker", "JWT", "RBAC", "k6", "Moyasar"],
+    tags: ["Flutter", "NestJS", "React", "PostgreSQL", "PostGIS", "Redis", "TypeScript", "OCI", "Cloudflare", "Docker", "JWT", "Moyasar", "Tap Payments", "ZATCA", "Sentry"],
     color: "cyan",
   },
   {
-    title: "Freelancer, Team Collaboration",
-    subtitle: "Various International Clients",
-    location: "Onsite, Peshawar, Pakistan",
-    period: "Jan 2023 – Nov 2025",
+    title: "Backend Developer (Freelance Development Team)",
+    subtitle: "Contract, International Clients · Peshawar, Pakistan",
+    location: "",
+    period: "Mar 2023 – Oct 2025",
     bullets: [
-      "Backend Developer: Delivered production-ready backend systems for international clients, owning architecture, APIs, authentication, and integrations across SaaS/MVP, web & mobile apps, e-commerce, CRM/ERP, and booking platforms.",
-      "Full-Stack Developer: Delivered full-stack projects end to end: architecture, APIs, responsive UIs, authentication, and deployment, with direct ownership of both frontend and backend.",
+      "Built 9 backend systems from scratch in Node.js/NestJS and PostgreSQL for international clients, working in client GitHub organizations through pull requests and code review: Order, Inventory & Payment Engine; Reliable Job & Webhook Platform; Usage Metering & Billing Backend; Booking & Ticket Reservation Engine; Event Ingestion & Analytics Pipeline; Authorization & Access Policy Service; Durable Workflow Execution Engine; API Traffic Replay & Regression Platform; Geospatial Matching Engine.",
+      "Commerce & billing: prevented overselling and double-booking with PostgreSQL transactions and row-level locks plus short-lived Redis holds with TTL, and added idempotency keys so retried payment and usage requests were never charged twice.",
+      "Async processing & reliability: built Redis/BullMQ queues with retries, exponential backoff, and dead-letter queues; HMAC-signed webhooks; persisted workflow state so long-running jobs resume after crashes; and batched writes for high event volume.",
+      "Security & platform: implemented JWT auth with RBAC and policy checks through NestJS guards, replayed captured API traffic against new builds to catch regressions before release, and used PostGIS spatial indexes for fast nearby-provider matching.",
+      "Engineering practice: modular NestJS domain modules, schema design with versioned migrations (TypeORM/Prisma), query tuning and indexing, Jest unit and integration tests, Swagger/OpenAPI docs, Dockerized builds, and post-deployment smoke tests.",
     ],
-    tags: ["React", "TypeScript", "Tailwind CSS", "NestJS", "Node.js", "PostgreSQL", "PostGIS", "MySQL", "MongoDB", "Redis", "BullMQ", "Socket.IO", "Docker", "OCI", "AWS", "Nginx", "PM2", "Cloudflare", "Firebase", "Supabase", "JWT", "OAuth2", "RBAC", "Prisma", "TypeORM"],
+    tags: ["Node.js", "NestJS", "PostgreSQL", "PostGIS", "Redis", "BullMQ", "TypeORM", "Prisma", "Jest", "Swagger", "Docker", "JWT"],
     color: "purple",
   },
   {
     title: "Mobile Application Developer Intern",
-    subtitle: "CodeAlpha",
-    location: "Remote",
+    subtitle: "CodeAlpha · Remote",
+    location: "",
     period: "Aug 2025 – Sep 2025",
     bullets: [
-      "Built a fitness tracker app in Flutter with Firebase Authentication and Firestore for real-time data sync, including signup/login and activity-tracking features.",
+      "Built a Flutter fitness-tracking app with Firebase Authentication and real-time Firestore sync.",
     ],
-    tags: ["Flutter", "Dart", "Firebase", "Firestore"],
+    tags: ["Flutter", "Firebase", "Firestore"],
     color: "pink",
   },
   {
-    title: "CECOS University of IT & Emerging Sciences",
-    subtitle: "BS Software Engineering · Peshawar, Pakistan",
+    title: "Student Software Developer",
+    subtitle: "CECOS University · Peshawar, Pakistan",
     location: "",
-    period: "Oct 2021 — 2025",
+    period: "Mar 2024 – Jul 2025",
     bullets: [
-      "Graduated with a degree in Software Engineering",
+      "Fixed the university's slow internal system by adding a Redis caching layer in front of the database, significantly reducing response times under load.",
+      "Movr (Final Year Project, Nov 2024 – Mar 2025): solo-developed a cross-platform Flutter app (Provider, clean architecture) with a NestJS + MySQL + TypeORM backend, JWT-secured REST APIs, and real-time tracking, delivered for an external client.",
     ],
+    tags: ["Redis", "Flutter", "NestJS", "MySQL", "TypeORM", "JWT"],
+    color: "cyan",
+  },
+  {
+    title: "BS Software Engineering",
+    subtitle: "CECOS University of IT & Emerging Sciences · Peshawar, Pakistan",
+    location: "",
+    period: "Oct 2021 – Oct 2025",
+    bullets: [],
     tags: [],
     color: "yellow",
   },
@@ -85,6 +107,7 @@ const tagColor = {
 // Bullets written as "Label: rest of sentence" get their label bolded.
 // Falls back to plain text when there's no short leading label.
 const renderBullet = (text) => {
+  if (typeof text !== 'string') return text;
   const colonIndex = text.indexOf(':');
   const hasLabel = colonIndex > 0 && colonIndex < 40;
   if (!hasLabel) return text;
@@ -122,14 +145,14 @@ const Experience = () => (
                     {item.location && <span className="text-xs font-mono text-gray-500 whitespace-nowrap">{item.location}</span>}
                   </div>
                 </div>
-                <ul className="space-y-1 mb-4">
+                {item.bullets.length > 0 && <ul className="space-y-1 mb-4">
                   {item.bullets.map((b, j) => (
                     <li key={j} className="text-gray-300 text-sm flex items-start gap-2">
                       <span className="text-gray-600">▸</span>
                       <span>{renderBullet(b)}</span>
                     </li>
                   ))}
-                </ul>
+                </ul>}
                 {item.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {item.tags.map((tag, k) => (
